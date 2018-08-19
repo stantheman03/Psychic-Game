@@ -6,14 +6,25 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
+
     <div id="game">
-        <h1>The Psychic Game</h1>
-        <p>Guess what letter I'm thinking of!</p>
+        <h1><strong>Psychic Game</strong></h1>
+        <p>Guess the letter I'm thinking of!</p>
         <p>Total Wins: </p>
         <p>Total Losses: </p>
         <p>Guesses Left: </p>
         <p>Your Guesses so far: </p>
     </div>
+    <style>
+
+            #game {
+                border:10px solid blanchedalmond;
+                color:palegreen;}
+                body{
+                background: url(http://www.psychic-scotland.co.uk/images/background1.jpg);
+            }
+            
+            </style>
 <script type="text/javascript">
     var wins = 0;
     var losses = 0;
@@ -26,22 +37,23 @@
         guessesSoFar.push(userGuess); 
         if (userGuess == computerGuess) {
             wins++;
-            alert('Way to go! You\'ve guesesed corrrectly. You Won!');
+            alert("You have outsmarted me and guessed right");
             guessesLeft = 15; 
+            // below code to repeat and new game starts
             guessesSoFar.length = 0;
         }
         else if (guessesLeft == 0){
             losses++;
-            alert('You didn\'t guess the correct letter. You lost. Let\'s try again.');
+            alert("You have lost and all hope is gone");
             guessesLeft = 15;
             guessesSoFar.length = 0;
         }
         else if (userGuess !== computerGuess){
-            guessesLeft--; 
+            guessesLeft; 
         }  
            
         var html = "<h1>The Psychic Game</h1>" + 
-        "<p>Guess what letter I'm thinking of!</p>" +
+        "<p>Guess the letter I'm thinking of!</p>" +
         "<p>Total Wins: " + 
         wins + 
         "</p>" +
